@@ -7,23 +7,23 @@ import csv
 
 # Set up Dynamo Client
 dynamodb = boto3.resource('dynamodb')
-offer_whitelist_table_name = 'SET ME'
-offer_whitelist_table = dynamodb.Table(offer_whitelist_table_name)
+offer_allowlist_table_name = 'SET ME'
+offer_allowlist_table = dynamodb.Table(offer_allowlist_table_name)
 
 # Set up S3 Client
 s3 = boto3.resource('s3')
-whitelist_bucket_name = 'SET ME'
+allowlist_bucket_name = 'SET ME'
 
 # Set logger
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
-    sourceKey = event['Records'][0]['s3']['object']['key'] # NOTE: Example: "Customer-Offer-Whitelist-aug-11-2020.csv"
-    whitelist_file = s3.Object(whitelist_bucket_name, sourceKey)
-    whitelist = whitelist_file.get()['Body'].read().decode('utf-8').splitlines()
+    sourceKey = event['Records'][0]['s3']['object']['key'] # NOTE: Example: "Customer-Offer-Allowlist-aug-11-2020.csv"
+    allowlist_file = s3.Object(allowlist_bucket_name, sourceKey)
+    allowlist = allowlist_file.get()['Body'].read().decode('utf-8').splitlines()
 
-    lines = csv.reader(whitelist)
+    lines = csv.reader(allowlist)
     headers = next(lines)
     for line in lines:
         customer_id = line[0]
@@ -39,4 +39,4 @@ def add_item_to_table(customer_id, offer_id, score):
         "OfferScore": score,
         "OfferViews": [] # NOTE: init as empty
     }
-    offer_whitelist_table.put_item(Item=item)
+    offer_allowlist_table.put_item(Item=item)

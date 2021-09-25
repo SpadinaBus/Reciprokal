@@ -6,8 +6,8 @@ import logging
 
 # NOTE: Set up Dynamo Client
 dynamodb = boto3.resource('dynamodb')
-offer_whitelist_table_name = 'SET ME'
-offer_whitelist_table = dynamodb.Table(offer_whitelist_table_name)
+offer_allowlist_table_name = 'SET ME'
+offer_allowlist_table = dynamodb.Table(offer_allowlist_table_name)
 
 # NOTE: Set up S3 Client
 s3 = boto3.resource('s3')
@@ -123,7 +123,7 @@ def create_offer_from_data(offer_data):
 
 def query_dynamo_for_offers(username):
   offers_response = None
-  offers_response = offer_whitelist_table.query(
+  offers_response = offer_allowlist_table.query(
     KeyConditionExpression=Key('CustomerId').eq(username)
   )
   return offers_response
@@ -201,7 +201,7 @@ def json_response(best_offer):
 
 def log_best_offer_view(username, best_offer):
   view_time = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-  result = offer_whitelist_table.update_item(
+  result = offer_allowlist_table.update_item(
       Key={
           'CustomerId': username,
           'OfferId': best_offer.id
