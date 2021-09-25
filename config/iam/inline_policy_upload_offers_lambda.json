@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AccessDynamoCustomerOfferAllowList",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:<dynamo arn>:table/<offer allowlist dynamo table name>",
+                "arn:aws:dynamodb:<dynamo arn>:table/<offer allowlist dynamo table name>/index/*"
+            ]
+        },
+        {
+            "Sid": "LoadCSVAllowlistFromS3",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::<offer allowlist s3 bucket name>/*"
+            ]
+        }
+    ]
+}
