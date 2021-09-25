@@ -1,0 +1,20 @@
+{
+  "offer_exclusion": {
+    "views_recency_window": {
+      "enabled": true,
+      "num_hours": 48,
+      "max_views": 6
+    },
+    "views_all_time": {
+      "enabled": true,
+      "max_views": 10
+    },
+    "expired_offers": {
+      "enabled": true,
+      "max_age_days": 14
+    }
+  },
+  "default_offer": {
+      "offer_id": "DefaultOffer"
+  }
+}

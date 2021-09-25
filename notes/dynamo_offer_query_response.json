@@ -1,0 +1,64 @@
+{
+  "Item": {
+    "CustomerId": {
+      "S": "tom@spadinabus.com"
+    },
+    "offers": {
+      "L": [
+        {
+          "M": {
+            "offerScore": {
+              "N": "90"
+            },
+            "loadedAt": {
+              "S": "2020-07-25T17:42:34Z"
+            },
+            "offerId": {
+              "S": "OfferA"
+            }
+          }
+        },
+        {
+          "M": {
+            "offerScore": {
+              "N": "70"
+            },
+            "loadedAt": {
+              "S": "2020-07-25T17:42:34Z"
+            },
+            "offerId": {
+              "S": "OfferB"
+            }
+          }
+        },
+        {
+          "M": {
+            "offerScore": {
+              "N": "80"
+            },
+            "loadedAt": {
+              "S": "2020-07-25T17:42:34Z"
+            },
+            "offerId": {
+              "S": "OfferC"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ResponseMetadata": {
+    "RequestId": "CHVSU0VUMCDR4V0499427HQR93VV4KQNSO5AEMVJF66Q9ASUAAJG",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 25 Jul 2020 18:54:56 GMT",
+      "content-type": "application/x-amz-json-1.0",
+      "content-length": "358",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "CHVSU0VUMCDR4V0499427HQR93VV4KQNSO5AEMVJF66Q9ASUAAJG",
+      "x-amz-crc32": "755574062"
+    },
+    "RetryAttempts": 0
+  }
+}
