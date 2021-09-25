@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>SpadinaBus Get Offers Demo Site - Get Offers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <section>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="title">SpadinaBus Get Offers Demo Site</h1>
+                <h2>Get Offers</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="form">
+        <div class="row">
+            <div class="col-lg-2 text-center"></div>
+            <div class="col-lg-10 text-left">
+                <button id="request" class="btn btn-primary">Request</button>
+                <br>
+                <textarea id="offer_response_text_area" name="offer_response_text_area" rows="20" cols="50">
+                    Get Offers JSON response will go here.
+                </textarea>
+                <!-- <div id="offer_image">
+                    Offer Image will be shown here.
+                </div> -->
+                <br>
+                <br>
+                <a href="index.html">Back To Index</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-3.1.0.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="https://js.arcgis.com/4.3/"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cognito-auth.js"></script>
+    <script src="js/offer.js"></script>
+</body>
+
+</html>
