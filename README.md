@@ -2,11 +2,11 @@
 
 The purpose of this project is to construct a cloud-oriented offer serving engine that is highly available, scalable, configurable and maintainable. An endpoint must be exposed for applications and websites to integrate with to retrieve offers for logged-in customers.
 
-* Offers are assigned to customers using other marketing software that produces an offer-customer allowlist CSV file. This allowlist maps an offer_id to a customer_id along with a score used to prioritize the best offers for each customer. This CSV is loaded into a highly available datastore (AWS DynamoDB) for querying.
+* Offers are assigned to customers using other marketing software that produces an offer-to-customer allowlist CSV file. This allowlist maps an `offer_id` to a `customer_id` along with a score used to prioritize the best offers for each customer. This CSV is loaded into a highly available datastore (AWS DynamoDB) for querying.
 * Offers are selected based on score and various configurations defining limits on viewing of offers by a customer. When a best offer is selected, a view is logged for it to the offer datastore.
-* The offer data is then returned to the client who will present the best offer based on the offer_id.
+* The offer data is then returned to the client who will present the best offer based on the `offer_id`.
 
-For full project documentation, see: `INSERT LINK TO DOCS PDF HERE`
+Click h full project documentation, see: http://www.spadinabus.com/wp-content/uploads/2021/09/SpadinaBus-Offers-Engine-Technical-Documentation-v1.0.pdf
 
 ## Contents of Repository
 * 2 python lambda functions
